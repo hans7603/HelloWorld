@@ -3,13 +3,12 @@
 
 from hermes_python.hermes import Hermes
 
-
 def action_wrapper(hermes, intent_message):
     result_sentence = "Hallo, ist da jemand?"
 
     current_session_id = intent_message.session_id
     hermes.publish_end_session(current_session_id, result_sentence)
-
+    print("Hello World")
 
 if __name__ == "__main__":
     with Hermes("localhost:1883") as h:
